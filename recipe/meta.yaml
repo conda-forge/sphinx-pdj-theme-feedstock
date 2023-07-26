@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx-pdj-theme-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx_pdj_theme-{{ version }}.tar.gz
   sha256: 1db9d09449e9eb846ee1232d0b7ab9f5cbc37901e84a9901e9d55e416f46fee0
 
 build:
