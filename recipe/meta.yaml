@@ -1,13 +1,13 @@
 {% set name = "sphinx-pdj-theme" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx-pdj-theme-{{ version }}.tar.gz
-  sha256: 4b86bfd8b8e20344db56aba13473f634286149fa0203d18e0437157f48c7e0fa
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 376fa8ee574ce49fe85c31eda2da581d44af92b676234ba5eed3d3cd049931b2
 
 build:
   noarch: python
