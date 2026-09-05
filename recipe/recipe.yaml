@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  name: sphinx-pdj-theme
+  version: "0.7.3"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: bfdf95ac5b4b3d5b31ddcfd448843695bde756bbde9a7ff5ba18d8fe4b770987
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=65
+    - wheel >=0.38
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - sphinx_pdj_theme
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  summary: A cool theme for sphinx documentation
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/jucacrispim/sphinx_pdj_theme
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
