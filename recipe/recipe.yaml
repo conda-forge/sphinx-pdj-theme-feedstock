@@ -31,7 +31,9 @@ tests:
       imports:
         - sphinx_pdj_theme
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
   summary: A cool theme for sphinx documentation
